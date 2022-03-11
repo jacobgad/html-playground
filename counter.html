@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Counter</title>
+	</head>
+
+	<body>
+		<nav>
+			<a href="counter.html">Counter</a> |
+			<a href="input.html">Input</a>
+		</nav>
+		<h1>Counter</h1>
+		<div>
+			<button id="minus">-</button>
+			<h2 id="count">0</h2>
+			<button id="add">+</button>
+		</div>
+	</body>
+
+	<style>
+		body {
+			display: grid;
+			place-items: center;
+			font-family: 'Roboto', sans-serif;
+		}
+
+		div {
+			width: 400px;
+			display: flex;
+			justify-content: space-evenly;
+			align-items: center;
+		}
+
+		h2 {
+			width: 30px;
+		}
+
+		button {
+			width: 50px;
+			height: 50px;
+			border-radius: 10px;
+			border: 0;
+			background: lightcoral;
+			color: aliceblue;
+			font-size: x-large;
+			transition: all 0.1s;
+		}
+
+		button:hover {
+			margin: -1.5px;
+			width: 53px;
+			height: 53px;
+			box-shadow: 0px 0px 15px grey;
+		}
+
+		button:active {
+			margin: 0;
+			width: 50px;
+			height: 50px;
+			background-color: coral;
+			box-shadow: 0px 0px 5px grey;
+		}
+	</style>
+
+	<script>
+		let count = document.getElementById('count');
+		document.getElementById('add').addEventListener('click', increment);
+		document.getElementById('minus').addEventListener('click', decrement);
+
+		function increment() {
+			count.innerHTML = parseInt(count.innerHTML) + 1;
+		}
+
+		function decrement() {
+			count.innerHTML = parseInt(count.innerHTML) - 1;
+		}
+	</script>
+</html>
