@@ -36,6 +36,8 @@
 
 		h2 {
 			width: 30px;
+			display: flex;
+			justify-content: center;
 		}
 
 		button {
@@ -60,7 +62,7 @@
 			margin: 0;
 			width: 50px;
 			height: 50px;
-			background-color: coral;
+			background-color: #f07070;
 			box-shadow: 0px 0px 5px grey;
 		}
 	</style>
@@ -71,11 +73,11 @@
 		document.getElementById('minus').addEventListener('click', decrement);
 
 		function increment() {
-			count.innerHTML = parseInt(count.innerHTML) + 1;
+			count.textContent = parseInt(count.textContent) + 1;
 		}
 
 		function decrement() {
-			count.innerHTML = parseInt(count.innerHTML) - 1;
+			count.textContent = parseInt(count.textContent) - 1;
 		}
 	</script>
 </html>
