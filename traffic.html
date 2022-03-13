@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Traffic light</title>
+	</head>
+
+	<body>
+		<nav>
+			<a href="counter.html">Counter</a> | <a href="input.html">Input</a> |
+			<a href="traffic.html">Traffic Light</a>
+		</nav>
+		<h1>Traffic light</h1>
+		<div class="traffic">
+			<div id="red" class="light">Red</div>
+			<div id="yellow" class="light">Yellow</div>
+			<div id="green" class="light">Green</div>
+		</div>
+	</body>
+
+	<style>
+		body {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			font-family: 'Roboto', sans-serif;
+		}
+
+		.traffic {
+			padding: 20px;
+			border: solid 10px darkgray;
+			border-radius: 80px;
+			background-color: black;
+			display: grid;
+			gap: 10px;
+		}
+
+		.light {
+			width: 100px;
+			height: 100px;
+			display: grid;
+			place-items: center;
+			border-radius: 50%;
+			background: white;
+		}
+
+		.red {
+			background: red;
+		}
+
+		.yellow {
+			background: yellow;
+		}
+
+		.green {
+			background: green;
+		}
+	</style>
+
+	<script>
+		const red = document.getElementById('red');
+		red.addEventListener('click', () => toggleColor(event.target, 'red'));
+
+		const yellow = document.getElementById('yellow');
+		yellow.addEventListener('click', () => toggleColor(event.target, 'yellow'));
+
+		const green = document.getElementById('green');
+		green.addEventListener('click', () => toggleColor(event.target, 'green'));
+
+		function toggleColor(div, color) {
+			if (div.classList.contains(color)) return div.classList.remove(color);
+			div.classList.add(color);
+		}
+	</script>
+</html>
